@@ -1,4 +1,6 @@
 pages:
   stage: deploy
   script: 'true'
+  artifacts:
+    paths: []
   only: [master]
