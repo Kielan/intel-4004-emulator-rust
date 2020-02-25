@@ -1,6 +1,6 @@
 pages:
   stage: deploy
-  script: touch public/ci
+  script: cp -r pub public
   artifacts:
-    paths: [public/ci]
+    paths: [public]
   only: [master]
