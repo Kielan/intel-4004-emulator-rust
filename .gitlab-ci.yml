@@ -1,6 +1,6 @@
 pages:
   stage: deploy
-  script: 'true'
+  script: touch public/ci
   artifacts:
-    paths: []
+    paths: [public/ci]
   only: [master]
