@@ -1,4 +1,3 @@
 pages:
-  stage: deploy
   script: 'false'
   only: [master]
