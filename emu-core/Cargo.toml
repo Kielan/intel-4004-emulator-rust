@@ -1,0 +1,4 @@
+[package]
+name = "emu-core"
+version = "0.1.0"
+authors = ["DutChen18 <dutchen18@gmail.com>"]

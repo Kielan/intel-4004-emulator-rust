@@ -1,0 +1,11 @@
+[package]
+name = "emu"
+version = "0.1.0"
+authors = ["DutChen18 <dutchen18@gmail.com>"]
+
+[dependencies]
+emu-core = { path = "emu-core" }
+wasm-bindgen = "0.2"
+
+[lib]
+crate-type = ["cdylib"]

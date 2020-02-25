@@ -1,0 +1,64 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="index.css">
+	</head>
+	<body>
+		<canvas id="canvas" width="432" height="256"></canvas><br>
+		<div class="buttons bg-black" id="buttons">
+			<button data="0,0" class="btn bg-green ft-black btn-clmem">CM</button>
+			<button data="0,1" class="btn bg-green ft-black btn-remem">RM</button>
+			<button data="0,2" class="btn bg-green ft-red btn-sbmem">M-</button>
+			<button data="0,3" class="btn bg-green ft-black btn-admem">M+</button>
+			<button data="1,0" class="btn bg-green ft-black btn-sqrt">&Sqrt;</button>
+			<button data="1,1" class="btn bg-green ft-black btn-perc">&percnt;</button>
+			<button data="1,2" class="btn bg-green ft-red btn-semem">M&equals;</button>
+			<button data="1,3" class="btn bg-green ft-black btn-aemem">M&equals;</button>
+
+			<button data="2,0" class="btn bg-gray ft-black btn-total">&diam;</button>
+			<button data="2,1" class="btn bg-gray ft-black btn-div">&div;</button>
+			<button data="2,2" class="btn bg-gray ft-black btn-mul">&Cross;</button>
+			<button data="2,3" class="btn bg-gray ft-black btn-equ">&equals;</button>
+			<button data="3,0" class="btn bg-gray ft-black btn-sub">-</button>
+			<button data="3,1" class="btn bg-gray ft-black btn-add">+</button>
+
+			<button data="4,0" class="btn bg-white ft-black btn-nine">9</button>
+			<button data="4,1" class="btn bg-white ft-black btn-six">6</button>
+			<button data="4,2" class="btn bg-white ft-black btn-three">3</button>
+			<button data="4,3" class="btn bg-white ft-black btn-point">&period;</button>
+			<button data="5,0" class="btn bg-white ft-black btn-eight">8</button>
+			<button data="5,1" class="btn bg-white ft-black btn-five">5</button>
+			<button data="5,2" class="btn bg-white ft-black btn-two">2</button>
+			<button data="5,3" class="btn bg-white ft-black btn-zero2">00</button>
+			<button data="6,0" class="btn bg-white ft-black btn-seven">7</button>
+			<button data="6,1" class="btn bg-white ft-black btn-four">4</button>
+			<button data="6,2" class="btn bg-white ft-black btn-one">1</button>
+			<button data="6,3" class="btn bg-white ft-black btn-zero">0</button>
+
+			<button data="7,0" class="btn bg-green ft-red btn-sign">S</button>
+			<button data="7,1" class="btn bg-green ft-black btn-exch">EX</button>
+			<button data="7,2" class="btn bg-green ft-black btn-clent">CE</button>
+			<button data="7,3" class="btn bg-green ft-black btn-clear">C</button>
+		</div><br>
+		<button id="feed-paper">FEED</button>
+		<select id="digit-point">
+			<option value="0">0</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="6">6</option>
+			<option value="8">8</option>
+		</select>
+		<select id="rounding">
+			<option value="0">FLOATING</option>
+			<option value="1">ROUNDING</option>
+			<option value="8">TRUNCATING</option>
+		</select>
+		<input disabled type="checkbox" id="lamp-ovf">OVF
+		<input disabled type="checkbox" id="lamp-sig">ON
+		<input disabled type="checkbox" id="lamp-mem">M
+		<script type="module" src="index.js"></script>
+	</body>
+</html>

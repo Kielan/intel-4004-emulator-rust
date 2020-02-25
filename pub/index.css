@@ -1,0 +1,58 @@
+.buttons {
+	display: inline-grid;
+	grid-template:
+		"sign  .     seven eight nine  .     sub   total .     sqrt  clmem" 64px
+		"exch  .     four  five  six   .     add   div   .     perc  remem" 64px
+		"clent .     one   two   three .     add   mul   .     admem sbmem" 64px
+		"clear .     zero  zero2 point .     equ   equ   .     aemem semem" 64px
+		/ 64px 16px 64px 64px 64px 16px 64px 64px 16px 64px 64px;
+	gap: 8px;
+	padding: 8px;
+}
+
+.btn {
+	border: none;
+	font-size: 2em;
+	border-radius: 4px;
+}
+
+.btn-clmem { grid-area: clmem; }
+.btn-remem { grid-area: remem; }
+.btn-sbmem { grid-area: sbmem; }
+.btn-semem { grid-area: semem; }
+.btn-sqrt { grid-area: sqrt; }
+.btn-perc { grid-area: perc; }
+.btn-admem { grid-area: admem; }
+.btn-aemem { grid-area: aemem; }
+
+.btn-total { grid-area: total; }
+.btn-div { grid-area: div; }
+.btn-mul { grid-area: mul; }
+.btn-equ { grid-area: equ; }
+.btn-sub { grid-area: sub; }
+.btn-add { grid-area: add; }
+
+.btn-nine { grid-area: nine; }
+.btn-six { grid-area: six; }
+.btn-three { grid-area: three; }
+.btn-point { grid-area: point; }
+.btn-eight { grid-area: eight; }
+.btn-five { grid-area: five; }
+.btn-two { grid-area: two; }
+.btn-zero2 { grid-area: zero2; }
+.btn-seven { grid-area: seven; }
+.btn-four { grid-area: four; }
+.btn-one { grid-area: one; }
+.btn-zero { grid-area: zero; }
+
+.btn-sign { grid-area: sign; }
+.btn-exch { grid-area: exch; }
+.btn-clent { grid-area: clent; }
+.btn-clear { grid-area: clear; }
+
+.bg-black { background: #222; }
+.bg-green { background: #884; }
+.bg-gray { background: #875; }
+.bg-white { background: #876; }
+.ft-black { color: #111; }
+.ft-red { color: #811; }
