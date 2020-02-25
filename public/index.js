@@ -56,7 +56,7 @@ window.cb_advance = function() {
 		if (canvas.height != canvas.clientHeight)
 			canvas.height = canvas.clientHeight;
 		if (lastTime !== null)
-			device.update((time - lastTime) / 10000);
+			device.update((time - lastTime) / 1000);
 		lamp_ovf.checked = device.lamp_ovf;
 		lamp_sig.checked = device.lamp_sig;
 		lamp_mem.checked = device.lamp_mem;
