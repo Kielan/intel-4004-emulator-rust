@@ -1,6 +1,6 @@
 pages:
   stage: deploy
-  script: 'false'
+  script: ''
   artifacts:
     paths: []
   only:
