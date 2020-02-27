@@ -133,8 +133,11 @@ function str_cpu(device) {
 
 	let lastTime = null;
 	requestAnimationFrame(function render(time) {
-		if (lastTime !== null)
-			device.update((time - lastTime) / 1000 * data_speed.value);
+		if (lastTime !== null) {
+			let delta = time - lastTime;
+			delta = Math.min(delta, 1000);
+			device.update(delta / 1000 * data_speed.value);
+		}
 		data_ram0.innerHTML = str_ram(device.get_ram(0));
 		data_ram1.innerHTML = str_ram(device.get_ram(1));
 		data_cpu0.innerHTML = str_cpu(device.get_cpu(0));
