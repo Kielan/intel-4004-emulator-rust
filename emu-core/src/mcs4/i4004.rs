@@ -245,11 +245,13 @@ impl I4004 {
 		}
 		return false;
 	}
-}
 
-use std::fmt;
-impl fmt::Debug for I4004 {
-	fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-		write!(f, "{:3}", self.stack[self.ptr as usize] % 256)
-	}
+	pub fn get_acc(&self) -> u8 { self.acc }
+	pub fn get_carry(&self) -> bool { self.carry }
+	pub fn get_reg(&self) -> &[u8; 16] { &self.reg }
+	pub fn get_stack(&self) -> &[u16; 4] { &self.stack }
+	pub fn get_ptr(&self) -> u8 { self.ptr }
+	pub fn get_instr(&self) -> u8 { self.instr }
+	pub fn get_arg(&self) -> u8 { self.arg }
+	pub fn get_phase(&self) -> u8 { (self.phase - 1) % 8 }
 }

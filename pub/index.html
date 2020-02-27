@@ -3,24 +3,83 @@
 		<meta charset="UTF-8">
 		<link rel="stylesheet" href="index.css">
 	</head>
-	<body>
-		<canvas id="canvas" width="432" height="256"></canvas><br>
-		<div class="buttons bg-black" id="buttons">
-			<button data="0,0" class="btn bg-green ft-black btn-clmem">CM</button>
-			<button data="0,1" class="btn bg-green ft-black btn-remem">RM</button>
-			<button data="0,2" class="btn bg-green ft-red btn-sbmem">M-</button>
-			<button data="0,3" class="btn bg-green ft-black btn-admem">M+</button>
-			<button data="1,0" class="btn bg-green ft-black btn-sqrt">&Sqrt;</button>
-			<button data="1,1" class="btn bg-green ft-black btn-perc">&percnt;</button>
-			<button data="1,2" class="btn bg-green ft-red btn-semem">M&equals;</button>
-			<button data="1,3" class="btn bg-green ft-black btn-aemem">M&equals;</button>
+	<body id="body">
+		<div id="settings" class="drag hidden">
+			<div>
+				<button id="data-reset">reset</button>
+				<button id="data-cycle">cycle</button>
+				<button id="data-instr">instr</button>
+			</div>
+			<div>
+				<input type="range" id="data-speed" min="0" max="1" step="0.25" value="1">
+				<div class="range-opt">
+					<span>0</span>
+					<span>25</span>
+					<span>50</span>
+					<span>75</span>
+					<span>100</span>
+				</div>
+			</div>
+			<div>
+				<span class="center ft-white">RAM0</span>
+				<pre id="data-ram0" class="ft-white"></pre>
+			</div>
+			<div>
+				<span class="center ft-white">RAM1</span>
+				<pre id="data-ram1" class="ft-white"></pre>
+			</div>
+			<div>
+				<span class="center ft-white">CPU</span>
+				<pre id="data-cpu0" class="ft-white"></pre>
+			</div>
+		</div>
+		<canvas id="canvas" width="432" height="256"></canvas>
+		<div id="controls">
+			<button id="feed-paper" class="bg-white"></button>
+			<div class="padding"></div>
+			<div>
+				<input type="range" id="digit-point" min="0" max="7" value="0">
+				<div class="range-opt">
+					<span>0</span>
+					<span>1</span>
+					<span>2</span>
+					<span>3</span>
+					<span>4</span>
+					<span>5</span>
+					<span>6</span>
+					<span>8</span>
+				</div>
+			</div>
+			<div>
+				<input type="range" id="rounding" min="0" max="2" value="1">
+				<div class="range-opt">
+					<span>TR</span>
+					<span>FL</span>
+					<span>RO</span>
+				</div>
+			</div>
+			<div class="padding"></div>
+			<div id="lamp-ovf" class="lamp ft-white">OVF</div>
+			<div id="lamp-sig" class="lamp ft-white">NEG</div>
+			<div id="lamp-mem" class="lamp ft-black">M</div>
+			<button id="data-settings">&#9881;</button>
+		</div>
+		<div class="buttons" id="buttons">
+			<button data="0,0" class="btn bg-blue ft-white btn-clmem">CM</button>
+			<button data="0,1" class="btn bg-blue ft-white btn-remem">RM</button>
+			<button data="0,2" class="btn bg-blue ft-red btn-sbmem">M-</button>
+			<button data="0,3" class="btn bg-blue ft-white btn-admem">M+</button>
+			<button data="1,0" class="btn bg-blue ft-white btn-sqrt">&Sqrt;</button>
+			<button data="1,1" class="btn bg-blue ft-white btn-perc">&percnt;</button>
+			<button data="1,2" class="btn bg-blue ft-red btn-semem">M&equals;</button>
+			<button data="1,3" class="btn bg-blue ft-white btn-aemem">M&equals;</button>
 
-			<button data="2,0" class="btn bg-gray ft-black btn-total">&diam;</button>
-			<button data="2,1" class="btn bg-gray ft-black btn-div">&div;</button>
-			<button data="2,2" class="btn bg-gray ft-black btn-mul">&Cross;</button>
-			<button data="2,3" class="btn bg-gray ft-black btn-equ">&equals;</button>
-			<button data="3,0" class="btn bg-gray ft-black btn-sub">-</button>
-			<button data="3,1" class="btn bg-gray ft-black btn-add">+</button>
+			<button data="2,0" class="btn bg-blue ft-white btn-total">&diam;</button>
+			<button data="2,1" class="btn bg-blue ft-white btn-div">&div;</button>
+			<button data="2,2" class="btn bg-blue ft-white btn-mul">&Cross;</button>
+			<button data="2,3" class="btn bg-white ft-black btn-equ">&equals;</button>
+			<button data="3,0" class="btn bg-white ft-black btn-sub">-</button>
+			<button data="3,1" class="btn bg-white ft-black btn-add">+</button>
 
 			<button data="4,0" class="btn bg-white ft-black btn-nine">9</button>
 			<button data="4,1" class="btn bg-white ft-black btn-six">6</button>
@@ -35,30 +94,11 @@
 			<button data="6,2" class="btn bg-white ft-black btn-one">1</button>
 			<button data="6,3" class="btn bg-white ft-black btn-zero">0</button>
 
-			<button data="7,0" class="btn bg-green ft-red btn-sign">S</button>
-			<button data="7,1" class="btn bg-green ft-black btn-exch">EX</button>
-			<button data="7,2" class="btn bg-green ft-black btn-clent">CE</button>
-			<button data="7,3" class="btn bg-green ft-black btn-clear">C</button>
-		</div><br>
-		<button id="feed-paper">FEED</button>
-		<select id="digit-point">
-			<option value="0">0</option>
-			<option value="1">1</option>
-			<option value="2">2</option>
-			<option value="3">3</option>
-			<option value="4">4</option>
-			<option value="5">5</option>
-			<option value="6">6</option>
-			<option value="8">8</option>
-		</select>
-		<select id="rounding">
-			<option value="0">FLOATING</option>
-			<option value="1">ROUNDING</option>
-			<option value="8">TRUNCATING</option>
-		</select>
-		<input disabled type="checkbox" id="lamp-ovf">OVF
-		<input disabled type="checkbox" id="lamp-sig">ON
-		<input disabled type="checkbox" id="lamp-mem">M
+			<button data="7,0" class="btn bg-blue ft-red btn-sign">S</button>
+			<button data="7,1" class="btn bg-blue ft-white btn-exch">EX</button>
+			<button data="7,2" class="btn bg-blue ft-white btn-clent">CE</button>
+			<button data="7,3" class="btn bg-blue ft-white btn-clear">C</button>
+		</div>
 		<script type="module" src="index.js"></script>
 	</body>
 </html>

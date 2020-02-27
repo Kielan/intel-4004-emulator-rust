@@ -35,4 +35,6 @@ impl I4003 {
 			self.output = 0;
 		}
 	}
+
+	pub fn get_data(&self) -> u16 { self.data }
 }

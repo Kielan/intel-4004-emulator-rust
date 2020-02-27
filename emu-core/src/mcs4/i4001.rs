@@ -100,4 +100,6 @@ impl I4001 {
 			self.phase = 0;
 		}
 	}
+
+	pub fn get_rom(&self) -> &[u8; 256] { &self.rom }
 }

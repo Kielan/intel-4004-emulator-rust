@@ -18,6 +18,201 @@ function getStringFromWasm0(ptr, len) {
 }
 
 function notDefined(what) { return () => { throw new Error(`${what} is not defined`); }; }
+
+let cachegetInt32Memory0 = null;
+function getInt32Memory0() {
+    if (cachegetInt32Memory0 === null || cachegetInt32Memory0.buffer !== wasm.memory.buffer) {
+        cachegetInt32Memory0 = new Int32Array(wasm.memory.buffer);
+    }
+    return cachegetInt32Memory0;
+}
+
+function getArrayU8FromWasm0(ptr, len) {
+    return getUint8Memory0().subarray(ptr / 1, ptr / 1 + len);
+}
+
+let cachegetUint16Memory0 = null;
+function getUint16Memory0() {
+    if (cachegetUint16Memory0 === null || cachegetUint16Memory0.buffer !== wasm.memory.buffer) {
+        cachegetUint16Memory0 = new Uint16Array(wasm.memory.buffer);
+    }
+    return cachegetUint16Memory0;
+}
+
+function getArrayU16FromWasm0(ptr, len) {
+    return getUint16Memory0().subarray(ptr / 2, ptr / 2 + len);
+}
+/**
+*/
+export class Js4002 {
+
+    static __wrap(ptr) {
+        const obj = Object.create(Js4002.prototype);
+        obj.ptr = ptr;
+
+        return obj;
+    }
+
+    free() {
+        const ptr = this.ptr;
+        this.ptr = 0;
+
+        wasm.__wbg_js4002_free(ptr);
+    }
+    /**
+    * @returns {Uint8Array}
+    */
+    get_ram() {
+        wasm.js4002_get_ram(8, this.ptr);
+        var r0 = getInt32Memory0()[8 / 4 + 0];
+        var r1 = getInt32Memory0()[8 / 4 + 1];
+        var v0 = getArrayU8FromWasm0(r0, r1).slice();
+        wasm.__wbindgen_free(r0, r1 * 1);
+        return v0;
+    }
+    /**
+    * @returns {Uint8Array}
+    */
+    get_stat() {
+        wasm.js4002_get_stat(8, this.ptr);
+        var r0 = getInt32Memory0()[8 / 4 + 0];
+        var r1 = getInt32Memory0()[8 / 4 + 1];
+        var v0 = getArrayU8FromWasm0(r0, r1).slice();
+        wasm.__wbindgen_free(r0, r1 * 1);
+        return v0;
+    }
+}
+/**
+*/
+export class Js4004 {
+
+    static __wrap(ptr) {
+        const obj = Object.create(Js4004.prototype);
+        obj.ptr = ptr;
+
+        return obj;
+    }
+
+    free() {
+        const ptr = this.ptr;
+        this.ptr = 0;
+
+        wasm.__wbg_js4004_free(ptr);
+    }
+    /**
+    * @returns {number}
+    */
+    get acc() {
+        var ret = wasm.__wbg_get_js4004_acc(this.ptr);
+        return ret;
+    }
+    /**
+    * @param {number} arg0
+    */
+    set acc(arg0) {
+        wasm.__wbg_set_js4004_acc(this.ptr, arg0);
+    }
+    /**
+    * @returns {boolean}
+    */
+    get carry() {
+        var ret = wasm.__wbg_get_js4004_carry(this.ptr);
+        return ret !== 0;
+    }
+    /**
+    * @param {boolean} arg0
+    */
+    set carry(arg0) {
+        wasm.__wbg_set_js4004_carry(this.ptr, arg0);
+    }
+    /**
+    * @returns {number}
+    */
+    get sptr() {
+        var ret = wasm.__wbg_get_js4004_sptr(this.ptr);
+        return ret;
+    }
+    /**
+    * @param {number} arg0
+    */
+    set sptr(arg0) {
+        wasm.__wbg_set_js4004_sptr(this.ptr, arg0);
+    }
+    /**
+    * @returns {number}
+    */
+    get data() {
+        var ret = wasm.__wbg_get_js4004_data(this.ptr);
+        return ret;
+    }
+    /**
+    * @param {number} arg0
+    */
+    set data(arg0) {
+        wasm.__wbg_set_js4004_data(this.ptr, arg0);
+    }
+    /**
+    * @returns {number}
+    */
+    get instr() {
+        var ret = wasm.__wbg_get_js4004_instr(this.ptr);
+        return ret;
+    }
+    /**
+    * @param {number} arg0
+    */
+    set instr(arg0) {
+        wasm.__wbg_set_js4004_instr(this.ptr, arg0);
+    }
+    /**
+    * @returns {number}
+    */
+    get arg() {
+        var ret = wasm.__wbg_get_js4004_arg(this.ptr);
+        return ret;
+    }
+    /**
+    * @param {number} arg0
+    */
+    set arg(arg0) {
+        wasm.__wbg_set_js4004_arg(this.ptr, arg0);
+    }
+    /**
+    * @returns {number}
+    */
+    get phase() {
+        var ret = wasm.__wbg_get_js4004_phase(this.ptr);
+        return ret;
+    }
+    /**
+    * @param {number} arg0
+    */
+    set phase(arg0) {
+        wasm.__wbg_set_js4004_phase(this.ptr, arg0);
+    }
+    /**
+    * @returns {Uint8Array}
+    */
+    get_reg() {
+        wasm.js4002_get_ram(8, this.ptr);
+        var r0 = getInt32Memory0()[8 / 4 + 0];
+        var r1 = getInt32Memory0()[8 / 4 + 1];
+        var v0 = getArrayU8FromWasm0(r0, r1).slice();
+        wasm.__wbindgen_free(r0, r1 * 1);
+        return v0;
+    }
+    /**
+    * @returns {Uint16Array}
+    */
+    get_stack() {
+        wasm.js4004_get_stack(8, this.ptr);
+        var r0 = getInt32Memory0()[8 / 4 + 0];
+        var r1 = getInt32Memory0()[8 / 4 + 1];
+        var v0 = getArrayU16FromWasm0(r0, r1).slice();
+        wasm.__wbindgen_free(r0, r1 * 2);
+        return v0;
+    }
+}
 /**
 */
 export class JsBusicom141PF {
@@ -94,6 +289,11 @@ export class JsBusicom141PF {
         return JsBusicom141PF.__wrap(ret);
     }
     /**
+    */
+    reset() {
+        wasm.jsbusicom141pf_reset(this.ptr);
+    }
+    /**
     * @param {number} delta
     */
     update(delta) {
@@ -118,6 +318,22 @@ export class JsBusicom141PF {
     */
     rounding(v) {
         wasm.jsbusicom141pf_rounding(this.ptr, v);
+    }
+    /**
+    * @param {number} i
+    * @returns {Js4002}
+    */
+    get_ram(i) {
+        var ret = wasm.jsbusicom141pf_get_ram(this.ptr, i);
+        return Js4002.__wrap(ret);
+    }
+    /**
+    * @param {number} i
+    * @returns {Js4004}
+    */
+    get_cpu(i) {
+        var ret = wasm.jsbusicom141pf_get_cpu(this.ptr, i);
+        return Js4004.__wrap(ret);
     }
 }
 /**

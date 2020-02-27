@@ -73,6 +73,12 @@ impl Busicom141PF {
 		}
 	}
 
+	pub fn reset(&mut self) {
+		for rom in self.rom.iter_mut() { rom.reset() }
+		for ram in self.ram.iter_mut() { ram.reset() }
+		for cpu in self.cpu.iter_mut() { cpu.reset() }
+	}
+
 	pub fn update(&mut self, delta: f64) {
 		if self.paper_feed {
 			self.rom[2].port |= 0x8;
@@ -175,4 +181,9 @@ impl Busicom141PF {
 			}
 		}
 	}
+
+	pub fn get_rom(&self, i: usize) -> &I4001 { &self.rom[i] }
+	pub fn get_ram(&self, i: usize) -> &I4002 { &self.ram[i] }
+	pub fn get_shift(&self, i: usize) -> &I4003 { &self.shift[i] }
+	pub fn get_cpu(&self, i: usize) -> &I4004 { &self.cpu[i] }
 }

@@ -36,6 +36,8 @@ impl I4002 {
 	}
 
 	pub fn reset(&mut self) {
+		self.ram = [0; 64];
+		self.stat = [0; 16];
 		self.port = 0;
 		self.src = 0;
 		self.phase = 0;
@@ -85,4 +87,7 @@ impl I4002 {
 			self.phase = 0;
 		}
 	}
+
+	pub fn get_ram(&self) -> &[u8; 64] { &self.ram }
+	pub fn get_stat(&self) -> &[u8; 16] { &self.stat }
 }
