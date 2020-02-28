@@ -13,6 +13,10 @@ html, body {
 	font: bold 12px Arial;
 }
 
+a {
+	color: #347;
+}
+
 button {
 	border: none;
 	outline: none;
@@ -78,7 +82,7 @@ pre {
 #canvas {
 	margin-bottom: 16px;
 	border-radius: 8px;
-	background: #333;
+	background: #555;
 	padding: 4px;
 }
 
@@ -95,11 +99,6 @@ pre {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	position: absolute;
-	background: #111;
-	padding: 4px;
-	border-radius: 8px;
-	border: 2px solid #222;
 }
 
 #settings > * {
@@ -126,8 +125,16 @@ pre {
 #lamp-sig.lit { background: #272; }
 #lamp-mem.lit { background: #777; }
 
-#data-settings {
-	background: transparent;
+#info {
+	font: normal 13px Arial;
+}
+
+.drag {
+	position: absolute;
+	background: #111;
+	padding: 4px;
+	border-radius: 8px;
+	border: 2px solid #222;
 }
 
 .hidden {
@@ -164,6 +171,12 @@ pre {
 
 .padding {
 	width: 16px;
+}
+
+.menu-btn {
+	background: transparent;
+	width: 24px;
+	padding: 0px;
 }
 
 .buttons {

@@ -11,6 +11,7 @@ const lamp_mem = document.getElementById('lamp-mem');
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 const data_settings = document.getElementById('data-settings');
+const data_info = document.getElementById('data-info');
 const data_reset = document.getElementById('data-reset');
 const data_cycle = document.getElementById('data-cycle');
 const data_instr = document.getElementById('data-instr');
@@ -19,6 +20,7 @@ const data_ram0 = document.getElementById('data-ram0');
 const data_ram1 = document.getElementById('data-ram1');
 const data_cpu0 = document.getElementById('data-cpu0');
 const menu_settings = document.getElementById('settings')
+const menu_info = document.getElementById('info')
 let device;
 
 const charset = [
@@ -114,7 +116,7 @@ function str_cpu(device) {
 	let dragging = null;
 	for (let drag of drags) {
 		drag.addEventListener('mousedown', function(e) {
-			const block = ['INPUT', 'BUTTON', 'TEXTAREA'];
+			const block = ['INPUT', 'BUTTON', 'TEXTAREA', 'A'];
 			if (!block.includes(e.target.tagName)) {
 				dragging = drag;
 			}
@@ -150,6 +152,9 @@ function str_cpu(device) {
 
 	data_settings.addEventListener('click', function() {
 		menu_settings.classList.toggle('hidden');
+	});
+	data_info.addEventListener('click', function() {
+		menu_info.classList.toggle('hidden');
 	});
 	data_reset.addEventListener('click', function() {
 		device.reset();

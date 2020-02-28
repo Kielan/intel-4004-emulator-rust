@@ -2,6 +2,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" href="index.css">
+		<title>Busicom 141-PF</title>
 	</head>
 	<body id="body">
 		<div id="settings" class="drag hidden">
@@ -33,6 +34,25 @@
 				<pre id="data-cpu0" class="ft-white"></pre>
 			</div>
 		</div>
+		<div id="info" class="drag hidden ft-white">
+			This is an emulator for the old Busicom 141-PF.<br>
+			It might not behave as you'd expect from a modern calculator.<br><br>
+			Here's some links to get you started:<br>
+			<a href="https://archive.org/details/Unicom141PManual" target="_blank">Unicom 141 Series Calculator Operating Instructions</a><br>
+			<a href="https://gitlab.com/dutchen18/emu-rs" target="_blank">The horrible uncommented source code</a><br>
+			<a href="http://4004.com/2009/Busicom-141PF-Calculator_asm_rel-1-0-1.txt" target="_blank">The amazing fully commented firmware</a><br>
+			<a href="http://www.vintagecalculators.com/html/busicom_141-pf.html" target="_blank">Busicom 141-PF on the Vintage Calculators Web Museum</a><br>
+			<a href="https://tinymicros.com/mediawiki/images/b/b9/MCS-4_Users_Manual.pdf" target="_blank">MCS-4 Users Manual</a><br><br>
+			And some examples:<br>
+			<pre><!--
+				--><strong>2 + 3 - 4 + =</strong> : 3<br><!--
+				--><strong>5 x 6 x 7 =</strong>   : 210<br><!--
+				--><strong>8 &Sqrt;</strong>           : 2.8&hellip;<br><!--
+				--><strong>90000 x = =</strong>   : OVF<!--
+			--></pre><br>
+			Made by Chen Steenvoorden<br>
+			<a href="mailto:dutchen18@gmail.com">dutchen18@gmail.com</a>
+		</div>
 		<canvas id="canvas" width="432" height="256"></canvas>
 		<div id="controls">
 			<button id="feed-paper" class="bg-white"></button>
@@ -62,7 +82,8 @@
 			<div id="lamp-ovf" class="lamp ft-white">OVF</div>
 			<div id="lamp-sig" class="lamp ft-white">NEG</div>
 			<div id="lamp-mem" class="lamp ft-black">M</div>
-			<button id="data-settings">&#9881;</button>
+			<button id="data-settings" class="menu-btn">&#9881;</button>
+			<button id="data-info" class="menu-btn">help</button>
 		</div>
 		<div class="buttons" id="buttons">
 			<button data="0,0" class="btn bg-blue ft-white btn-clmem">CM</button>
