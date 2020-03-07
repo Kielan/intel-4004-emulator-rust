@@ -47,7 +47,7 @@ const charset = [
 window.cb_fire = function(col, row, red) {
 	const text = charset[col][row];
 	ctx.font = 'bold 16px Courier New';
-	ctx.fillStyle = red ? '#711' : '#111';
+	ctx.fillStyle = red ? '#b11' /*711*/ : '#111';
 	ctx.textBaseline = 'bottom';
 	ctx.fillText(text, col * 24, canvas.height);
 };

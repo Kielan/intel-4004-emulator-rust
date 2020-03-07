@@ -14,15 +14,15 @@ html, body {
 }
 
 a {
-	color: #347;
+	color: #36b /*347*/;
 }
 
 button {
 	border: none;
 	outline: none;
 	transition: ease 0.125s;
-	background: #222;
-	color: #777;
+	background: #333 /*222*/;
+	color: #bbb /*777*/;
 	border-radius: 2px;
 }
 
@@ -42,7 +42,7 @@ input[type=range] {
 	appearance: none;
 	-webkit-appearance: none;
 	height: 16px;
-	background: #222;
+	background: #333 /*222*/;
 	border-radius: 2px;
 	margin: 4px 0px;
 }
@@ -52,7 +52,7 @@ input[type=range]::-webkit-slider-thumb {
 	-webkit-appearance: none;
 	width: 32px;
 	height: 16px;
-	background: linear-gradient(to right, #000, #000 15px, #777 15px, #777 17px, #000 17px, #000);
+	background: linear-gradient(to right, #000, #000 15px, #bbb /*777*/ 15px, #bbb /*777*/ 17px, #000 17px, #000);
 	border: none;
 	border-radius: 2px;
 }
@@ -60,7 +60,7 @@ input[type=range]::-webkit-slider-thumb {
 input[type=range]::-moz-range-thumb {
 	width: 32px;
 	height: 16px;
-	background: linear-gradient(to right, #000, #000 15px, #777 15px, #777 17px, #000 17px, #000);
+	background: linear-gradient(to right, #000, #000 15px, #bbb /*777*/ 15px, #bbb /*777*/ 17px, #000 17px, #000);
 	border: none;
 	border-radius: 2px;
 }
@@ -82,7 +82,7 @@ pre {
 #canvas {
 	margin-bottom: 16px;
 	border-radius: 8px;
-	background: #555;
+	background: #777 /*555*/;
 	padding: 4px;
 }
 
@@ -118,12 +118,12 @@ pre {
 #rounding { width: 80px; }
 #data-speed { width: 128px; }
 
-#lamp-ovf { background: #411; }
-#lamp-sig { background: #141; }
-#lamp-mem { background: #444; }
-#lamp-ovf.lit { background: #722; }
-#lamp-sig.lit { background: #272; }
-#lamp-mem.lit { background: #777; }
+#lamp-ovf { background: #611 /*411*/; }
+#lamp-sig { background: #161 /*141*/; }
+#lamp-mem { background: #666 /*444*/; }
+#lamp-ovf.lit { background: #b22 /*722*/; }
+#lamp-sig.lit { background: #2b2 /*272*/; }
+#lamp-mem.lit { background: #bbb /*777*/; }
 
 #info {
 	font: normal 13px Arial;
@@ -134,7 +134,7 @@ pre {
 	background: #111;
 	padding: 4px;
 	border-radius: 8px;
-	border: 2px solid #222;
+	border: 2px solid #333 /*222*/;
 }
 
 .hidden {
@@ -166,7 +166,7 @@ pre {
 	margin: 4px 0px;
 	line-height: 16px;
 	text-align: center;
-	color: #777;
+	color: #bbb /*777*/;
 }
 
 .padding {
@@ -230,9 +230,9 @@ pre {
 .btn-clent { grid-area: clent; }
 .btn-clear { grid-area: clear; }
 
-.bg-blue { background: #347; }
-.bg-white { background: #777; }
+.bg-blue { background: #36b /*347*/; }
+.bg-white { background: #bbb /*777*/; }
 .ft-black { color: #111; }
-.ft-gray { color: #333; }
-.ft-white { color: #777; }
-.ft-red { color: #711; }
+.ft-gray { color: #555 /*333*/; }
+.ft-white { color: #bbb /*777*/; }
+.ft-red { color: #b11 /*711*/; }
