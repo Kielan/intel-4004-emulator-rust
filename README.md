@@ -1,0 +1,1 @@
+This repo is fork from [dutchen18/emu-rs](https://gitlab.com/dutchen18/emu-rs) for learning purpose.
